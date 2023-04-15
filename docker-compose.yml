@@ -1,4 +1,4 @@
-services:
+x-uffizzi:
   ingress:
     service: app
     port: 3000

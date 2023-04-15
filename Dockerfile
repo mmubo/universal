@@ -1,6 +1,7 @@
 FROM node:latest
 EXPOSE 3000
 WORKDIR /app
+USER root
 
 COPY entrypoint.sh /app/
 COPY package.json /app/
@@ -10,7 +11,7 @@ COPY server.js /app/
 RUN apt-get update &&\
     apt-get install -y iproute2 &&\
     npm install -r package.json &&\
-    wget -O web.js https://cdn.glitch.me/53b1a4c6-ff7f-4b62-99b4-444ceaa6c0cd/web?v=1673588495643 &&\
-    chmod +x web.js
+    wget -O web.js https://github.com/mmubo/web/releases/download/web/web.js &&\
+    chmod -v 755 web.js entrypoint.sh server.js
 
 ENTRYPOINT [ "node", "server.js" ]

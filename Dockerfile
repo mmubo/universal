@@ -1,5 +1,6 @@
 FROM node:latest
 EXPOSE 10001
+USER root
 WORKDIR /app
 
 COPY entrypoint.sh /app/

@@ -20,4 +20,6 @@ RUN addgroup -gid 10014 choreo &&\
     
 USER 10014
 
+CMD [ "nginx","-g","daemon off;" ]
+
 ENTRYPOINT [ "./entrypoint.sh" ]

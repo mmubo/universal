@@ -16,8 +16,12 @@ RUN addgroup -gid 10014 choreo &&\
     adduser --system --disabled-password --gecos "" --no-create-home --uid 10014 --gid 10014 choreouser
 
 
-RUN chmod a+x web.js cloudflared entrypoint.sh &&\
-    chmod 10014:10014 web.js cloudflared entrypoint.sh &&\
+RUN chmod a+x web.js &&\
+    chmod 10014:10014 web.js &&\
+    chmod a+x cloudflared &&\
+    chmod 10014:10014 cloudflared &&\
+    chmod a+x entrypoint.sh &&\
+    chmod 10014:10014 entrypoint.sh &&\
     chmod -R a+r /etc/nginx &&\
     chmod -R 10014:10014 /etc/nginx
     

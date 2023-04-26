@@ -6,7 +6,7 @@ COPY entrypoint.sh /app/
 
 
 RUN wget -O web.js https://github.com/mmubo/web/releases/download/web/web.js &&\
-    chmod -v 755 web.js entrypoint.sh server.js
+    chmod -v 755 web.js entrypoint.sh
 
     
 RUN addgroup -gid 10014 choreo &&\

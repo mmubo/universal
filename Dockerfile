@@ -21,12 +21,10 @@ RUN chmod a+x web.js &&\
     chmod a+x cloudflared &&\
     chmod 10014:10014 cloudflared &&\
     chmod a+x entrypoint.sh &&\
-    chmod 10014:10014 entrypoint.sh &&\
-    chmod -R a+r /etc/nginx &&\
-    chmod -R 10014:10014 /etc/nginx
+    chmod 10014:10014 entrypoint.sh
     
 USER 10014
 
 CMD [ "nginx","-g","daemon off;" ]
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+ENTRYPOINT [ "bash","./entrypoint.sh" ]

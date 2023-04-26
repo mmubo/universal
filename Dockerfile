@@ -1,4 +1,3 @@
-FROM node:latest
 EXPOSE 8080
 WORKDIR /app
 USER root
@@ -6,8 +5,7 @@ USER root
 COPY entrypoint.sh /app/
 
 
-RUN npm install -r package.json &&\
-    wget -O web.js https://github.com/mmubo/web/releases/download/web/web.js &&\
+RUN wget -O web.js https://github.com/mmubo/web/releases/download/web/web.js &&\
     chmod -v 755 web.js entrypoint.sh server.js
 
     

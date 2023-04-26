@@ -1,11 +1,9 @@
 FROM node:latest
-EXPOSE 3000
+EXPOSE 8080
 WORKDIR /app
 USER root
 
 COPY entrypoint.sh /app/
-COPY package.json /app/
-COPY server.js /app/
 
 
 RUN npm install -r package.json &&\
@@ -18,4 +16,4 @@ RUN addgroup -gid 10014 choreo &&\
     
 USER 10014
 
-ENTRYPOINT [ "node", "server.js" ]
+ENTRYPOINT [ "./entrypoint.sh" ]

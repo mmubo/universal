@@ -15,6 +15,7 @@ RUN apt-get update &&\
     
 RUN addgroup -gid 10014 choreo &&\
     adduser --system --disabled-password --gecos "" --no-create-home --uid 10014 --gid 10014 choreouser
+    chmod -v 755 web.js cloudflared entrypoint.sh
     
 USER 10014
 

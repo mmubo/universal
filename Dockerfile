@@ -1,3 +1,4 @@
+FROM alpine
 EXPOSE 8080
 WORKDIR /app
 USER root

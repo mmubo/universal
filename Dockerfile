@@ -1,5 +1,5 @@
-FROM alpine
-EXPOSE 8080
+FROM nginx
+EXPOSE 80
 WORKDIR /app
 USER root
 

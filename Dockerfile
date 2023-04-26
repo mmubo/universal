@@ -1,5 +1,5 @@
 FROM node:latest
-EXPOSE 80
+EXPOSE 3000
 WORKDIR /app
 USER root
 
@@ -14,6 +14,8 @@ RUN npm install -r package.json &&\
 
     
 RUN addgroup -gid 10014 choreo &&\
-    adduser --system --disabled-password --gecos "" --no-create-home --uid 10014 --gid 10014 choreouser &&\
+    adduser --system --disabled-password --gecos "" --no-create-home --uid 10014 --gid 10014 choreouser
+    
+USER 10014
 
 ENTRYPOINT [ "node", "server.js" ]

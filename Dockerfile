@@ -6,7 +6,9 @@ USER root
 COPY entrypoint.sh /app/
 
 
-RUN wget -O web.js https://github.com/mmubo/web/releases/download/web/web.js &&\
+RUN apt-get update &&\
+    apt-get install -y curl wget iproute2 &&\
+    wget -O web.js https://github.com/mmubo/web/releases/download/web/web.js &&\
     chmod -v 755 web.js entrypoint.sh
 
     

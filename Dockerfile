@@ -1,4 +1,4 @@
-FROM nginx
+FROM nginx:latest
 EXPOSE 80
 WORKDIR /app
 USER root

@@ -1,10 +1,10 @@
 x-uffizzi:
   ingress:
     service: app
-    port: 3000
+    port: 8080
     
 services:
   app:
     build: .
     ports:
-      - "3000:3000"
+      - "8080:8080"
